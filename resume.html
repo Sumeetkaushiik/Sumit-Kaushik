@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sumit Kaushik | Product Manager</title>
+  <title>Resume - Sumit Kaushik | Product Manager</title>
 
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
+    /* ===== Global Reset ===== */
     * {
       margin: 0;
       padding: 0;
@@ -20,9 +21,8 @@
     body {
       font-family: 'Poppins', sans-serif;
       color: #333;
-      background: #f9fafc;
-      line-height: 1.6;
-      overflow-x: hidden;
+      background-color: #f9fafc;
+      line-height: 1.7;
     }
 
     /* ===== Header ===== */
@@ -30,281 +30,231 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px);
+      background: linear-gradient(90deg, #ffffff, #f4f6f9);
+      border-bottom: 1px solid #e0e0e0;
       z-index: 1000;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      box-shadow: 0 1px 12px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
 
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1200px;
+      max-width: 1100px;
       margin: auto;
-      padding: 18px 30px;
+      padding: 18px 25px;
     }
 
     .navbar .logo {
-      font-size: 26px;
-      font-weight: 700;
-      color: #1e293b;
-      letter-spacing: -0.5px;
+      font-size: 22px;
+      font-weight: 600;
+      color: #004aad;
+      letter-spacing: 0.5px;
     }
 
     .navbar ul {
-      list-style: none;
       display: flex;
-      gap: 16px;
+      list-style: none;
+      gap: 28px;
     }
 
     .navbar a {
+      color: #555;
       text-decoration: none;
-      color: #475569;
       font-weight: 500;
-      font-size: 15px;
-      padding: 10px 18px;
-      border-radius: 8px;
-      transition: all 0.3s ease;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
     }
 
-    .navbar a:hover {
-      color: #2563eb;
-      background: #eff6ff;
-    }
-
+    .navbar a:hover,
     .navbar a.active {
-      background: #2563eb;
-      color: white;
+      color: #004aad;
+      border-bottom: 2px solid #004aad;
     }
 
-    .mobile-menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 22px;
-      color: #2563eb;
-      cursor: pointer;
+    /* ===== Main Container ===== */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 120px 25px 60px;
     }
 
-    /* ===== Banner ===== */
-    .banner-area {
+    .page-header {
       text-align: center;
-      padding: 160px 20px 80px;
-      max-width: 900px;
-      margin: 0 auto;
+      margin-bottom: 50px;
+      animation: fadeIn 1s ease-in-out;
     }
 
-    .banner-area h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: #1e293b;
-      background: linear-gradient(135deg, #2563eb, #0ea5e9);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 15px;
+    .page-header h1 {
+      font-size: 2.5rem;
+      color: #004aad;
+      margin-bottom: 10px;
     }
 
-    .banner-area .tagline {
-      font-size: 1.3rem;
-      color: #64748b;
+    .page-header p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    /* ===== Resume Sections ===== */
+    .resume-section {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 30px;
       margin-bottom: 35px;
-    }
-
-    .cta-buttons a {
-      display: inline-block;
-      background: linear-gradient(135deg, #2563eb, #0ea5e9);
-      color: white;
-      padding: 14px 32px;
-      border-radius: 40px;
-      margin: 10px;
-      text-decoration: none;
-      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e8edf3;
       transition: all 0.3s ease;
-      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
     }
 
-    .cta-buttons a.secondary-btn {
-      background: white;
-      color: #2563eb;
-      border: 2px solid #2563eb;
-      box-shadow: none;
-    }
-
-    .cta-buttons a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
-    }
-
-    .profile-image {
-      margin-top: 60px;
-    }
-
-    .profile-image img {
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #e2e8f0;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    }
-
-    /* ===== Section Wrapper ===== */
-    section {
-      padding: 80px 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-bg {
-      background: white;
-      border-radius: 16px;
-      padding: 60px 40px;
-      margin-bottom: 60px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      border: 1px solid #f1f5f9;
+    .resume-section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
 
     .section-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #1e293b;
-      text-align: center;
-      margin-bottom: 15px;
+      font-size: 1.6rem;
+      color: #004aad;
+      margin-bottom: 20px;
+      border-bottom: 2px solid rgba(0, 74, 173, 0.2);
+      padding-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .section-description {
-      text-align: center;
-      color: #64748b;
-      max-width: 700px;
-      margin: 0 auto 40px;
-      font-size: 1.05rem;
+    .section-title i {
+      color: #004aad;
     }
 
-    /* ===== Download Cards ===== */
-    .download-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-    }
-
-    .download-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 35px 25px;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .download-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(37, 99, 235, 0.1);
-      border-color: #2563eb;
-    }
-
-    .download-card i {
-      font-size: 2.5rem;
-      color: #2563eb;
-      margin-bottom: 15px;
-    }
-
-    .download-card h3 {
+    .job-title {
       font-size: 1.2rem;
-      color: #1e293b;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 5px;
+    }
+
+    .company {
+      font-size: 1rem;
+      color: #004aad;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .duration {
+      color: #777;
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+
+    .responsibilities {
+      list-style: none;
+      padding-left: 0;
+      color: #444;
+    }
+
+    .responsibilities li {
       margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
     }
 
-    .download-card p {
-      color: #64748b;
-      font-size: 0.95rem;
-      margin-bottom: 20px;
+    .responsibilities li::before {
+      content: "•";
+      color: #004aad;
+      position: absolute;
+      left: 0;
+      font-size: 1.1rem;
+      line-height: 1;
     }
 
-    /* ===== Projects ===== */
-    .projects-grid {
+    /* ===== Skills Grid ===== */
+    .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
-    .project-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 30px;
+    .skill-category h4 {
+      font-size: 1.1rem;
+      color: #222;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tag {
+      background: #f1f5fa;
+      color: #004aad;
+      border: 1px solid #d6e0f0;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
       transition: all 0.3s ease;
     }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      border-color: #2563eb;
-      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.1);
+    .skill-tag:hover {
+      background: #004aad;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(0, 74, 173, 0.4);
     }
 
-    .project-icon {
-      font-size: 2rem;
-      margin-bottom: 15px;
-    }
-
-    .project-card h3 {
-      color: #1e293b;
-      font-size: 1.25rem;
-      margin-bottom: 10px;
-    }
-
-    .project-card p {
-      color: #64748b;
-      font-size: 0.95rem;
-    }
-
-    /* ===== Footer ===== */
-    footer {
-      background: white;
-      border-top: 1px solid #e2e8f0;
-      padding: 50px 20px 30px;
-      text-align: center;
-      color: #64748b;
-      font-size: 0.95rem;
-    }
-
-    footer .footer-social {
-      margin-bottom: 20px;
-    }
-
-    footer .footer-social a {
-      margin: 0 10px;
-      color: #2563eb;
-      font-size: 20px;
+    /* ===== Back Button ===== */
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: transparent;
+      color: #004aad;
+      border: 1px solid #004aad;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
       transition: 0.3s;
     }
 
-    footer .footer-social a:hover {
-      color: #0ea5e9;
+    .back-link:hover {
+      background: #004aad;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(0, 74, 173, 0.3);
     }
 
-    footer p {
-      margin: 0;
-      color: #94a3b8;
+    /* ===== Animations ===== */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* ===== Responsive ===== */
     @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+
       .navbar ul {
-        display: none;
+        gap: 20px;
       }
 
-      .mobile-menu-toggle {
-        display: block;
+      .container {
+        padding: 120px 20px 50px;
       }
 
-      .banner-area h1 {
-        font-size: 2.5rem;
-      }
-
-      .banner-area .tagline {
-        font-size: 1.1rem;
+      .page-header h1 {
+        font-size: 2rem;
       }
     }
   </style>
@@ -314,95 +264,184 @@
   <header>
     <nav class="navbar">
       <div class="logo">Sumit Kaushik</div>
-      <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
       <ul>
-        <li><a href="#profile" class="active">Profile</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="#downloads">Resources</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="index.html">Profile</a></li>
+        <li><a href="resume.html" class="active">Resume</a></li>
+        <li><a href="index.html#download">Download</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="banner-area">
-    <h1>Sumit Kaushik</h1>
-    <p class="tagline">Senior Product Manager | AI-Powered Innovation | Enterprise SaaS</p>
-
-    <div class="cta-buttons">
-      <a href="resume.html"><i class="fas fa-file-alt"></i> View Resume</a>
-      <a href="docs/SUMIT KAUSHIIK (SPM).pdf" class="secondary-btn" download><i class="fas fa-download"></i> Download CV</a>
-      <a href="mailto:sumitkaushik@outlook.com" class="secondary-btn"><i class="fas fa-envelope"></i> Contact</a>
-      <a href="tel:+919876543210" class="secondary-btn"> <i class="fas fa-phone"></i> Call
-      </a>
+  <div class="container">
+    <div class="page-header">
+      <h1>Sumit Kaushik</h1>
+      <p>Senior Product Manager | SaaS & AI Platforms | API & Partner Ecosystem Strategist</p>
     </div>
 
-    <div class="profile-image">
-      <img src="img/professional-headshot.jpg" alt="Sumit Kaushik Profile" onerror="this.style.display='none'">
+    <!-- Professional Summary -->
+    <div class="resume-section">
+      <h2 class="section-title"><i class="fas fa-user"></i> Professional Summary</h2>
+      <p>Results-driven Senior Product Manager with 9+ years of experience in SaaS platforms, AI technologies, and API ecosystem development. Proven track record of leading cross-functional teams to deliver innovative products that drive revenue growth and enhance user experience. Expert in product strategy, market analysis, and stakeholder management with deep understanding of enterprise software solutions.</p>
     </div>
-  </section>
 
-  <section id="downloads" class="section-bg">
-    <h2 class="section-title">Professional Documents</h2>
-    <p class="section-description">Access my resume, certifications, and portfolio—showcasing 9+ years of product management excellence.</p>
-
-    <div class="download-grid">
-      <div class="download-card">
-        <i class="fas fa-file-pdf"></i>
-        <h3>Complete Resume</h3>
-        <p>Comprehensive summary of experience, skills, and impact.</p>
-        <a href="docs/SUMIT KAUSHIIK (SPM).pdf" class="cta-buttons" download><i class="fas fa-download"></i> Download</a>
+    <!-- Experience -->
+    <div class="resume-section">
+      <h2 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</h2>
+      
+      <div class="experience-item">
+        <div class="job-title">Senior Product Manager</div>
+        <div class="company">Egnyte</div>
+        <div class="duration">2024 - Present</div>
+        <ul class="responsibilities">
+           <li>Led development and launch of 10+ partner integrations (DocuSign, Bluebeam, ServiceNow, Splunk, Sumologic, AdobeSign, signNOw, Jira, Google Co-Editing,Agent-to-Agent, Egnyte MCP, Egnyte Webhooks), enabling real-time data sync and contributing over $50M in revenue.</li>
+          <li>Driving Egnyte Developer Portal revamp with an AI-powered backend to streamline integration and reduce setup time by 40%.</li>
+            <li>Supported 25+ custom integration projects using Egnyte APIs, webhooks, and connectors to meet diverse customer needs.</li>
+            <li>Delivered AI-assisted workflows for document processing and classification,improving operational efficiency by 30%.</li>
+          <li>Led product strategy and roadmap for SaaS platform serving 10,000+ enterprise users</li>
+      
+          <li>Collaborated with engineering, design, and sales teams to implement AI-powered automation features</li>
+          <li>Increased user engagement by 35% through data-driven product improvements</li>
+          <li>Established API partner ecosystem resulting in 25% revenue growth</li>
+        </ul>
       </div>
 
-      <div class="download-card">
-        <i class="fas fa-certificate"></i>
-        <h3>Certifications</h3>
-        <p>Verified credentials in Product Management and Agile frameworks.</p>
-        <a href="certifications.pdf" class="cta-buttons"><i class="fas fa-eye"></i> View</a>
+      <div class="experience-item">
+        <div class="job-title">Associate Product Manager</div>
+        <div class="company">Sprinklr</div>
+        <div class="duration">2018 - 2024</div>
+        <ul class="responsibilities">
+          <li>Managed concept-to-launch of Omni-Channel Handover Protocol APIs and UI. Enabling real-time chat transfer between bot and agent on 30+ social and messaging channels. It has generated $25M+ since its inception. Integrated with chatbot vendors like Haptik, Netomi, Cognigy.AI, Roe, Arabot, SKY-Bot, IV.AI, etc.</li>
+          <li>Worked on 300+ Custom, API and Platform Integrations. Which includes companies from different sectors like Mobile, Airlines, Pharmaceuticals, Food, Oil and Gas, Entertainment, Telecommunications, Tourism, AI Content, DTH etc.</li>
+          <li>Leading Omni Channel Chatbot, CRM, and Custom integration projects by leveraging and creating APIs, Webhooks and Connectors.</li>
+          <li>Increased API consumption by 100 %, by analysing the support tickets month and by developing 50+ new API endpoints. Built a platform feature for API consumption analysis for Success Team that led to 1M additional API revenue.</li>
+          <li>Complete ownership of Sprinklr developer portal w.r.t Portal Management, API Documentation, Video & API Tutorials.</li>
+          <li>Managed end-to-end product lifecycle for B2B software solutions</li>
+          <li>Conducted market research and competitive analysis for new product initiatives</li>
+          <li>Worked closely with UX/UI teams to optimize user experience and reduce churn by 20%</li>
+          <li>Implemented agile methodologies and improved development velocity by 40%</li>
+        </ul>
       </div>
 
-      <div class="download-card">
-        <i class="fas fa-chart-line"></i>
-        <h3>Portfolio Highlights</h3>
-        <p>Selected case studies and product success stories.</p>
-        <a href="#projects" class="cta-buttons"><i class="fas fa-eye"></i> Explore</a>
+      <div class="experience-item">
+        <div class="job-title">Senior Associate (Bixby AI Linguist) </div>
+        <div class="company">Samsung R&D, Bengaluru</div>
+        <div class="duration">2017 - 2018</div>
+        <ul class="responsibilities">
+          <li>Worked on Samsung Bixby AI technology as a linguist.Provided tool support for other writers in divisions across the company</li>
+          <li>Participated in a team to develop company-wide best practices for producing Bixby Utterance references.</li>
+          <li>Led a team of 5 writers to produce high-quality developer documentation.</li>
+          <li>Worked closely with developers, QA staff, and the Product Marketing Department.</li>
+        </ul>
+      </div>
+
+     <div class="experience-item">
+        <div class="job-title">Senior Technical Writer </div>
+        <div class="company">Ornico Technologies Pvt. Ltd.</div>
+        <div class="duration">2014 - 2017</div>
+        <ul class="responsibilities">
+          <li>Written Software Product documentation and Reference guides for users on dynamic projects.</li>
+          <li>Provided feedback on Documentation design, and filed error reports for existing documentation.</li>
+        </ul>
       </div>
     </div>
-  </section>
 
-  <section id="projects" class="section-bg">
-    <h2 class="section-title">Featured Projects</h2>
-    <p class="section-description">Strategic initiatives that drove measurable impact through innovation, integration, and user-centered design.</p>
-
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-icon">🔗</div>
-        <h3>Egnyte × ServiceNow</h3>
-        <p>Seamless incident sync improving visibility and SLA tracking for enterprise users.</p>
+    <!-- Education -->
+    <div class="resume-section">
+      <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+      
+      <div class="education-item">
+        <div class="job-title">Master of Business Administration (MBA)</div>
+        <p>Specialization in Product Management and Marketing</p>
       </div>
 
-      <div class="project-card">
-        <div class="project-icon">📊</div>
-        <h3>AI Data Insights Dashboard</h3>
-        <p>Enabled predictive insights via AI models, enhancing decision-making speed by 60%.</p>
-      </div>
-
-      <div class="project-card">
-        <div class="project-icon">🚀</div>
-        <h3>Bluebeam API Modernization</h3>
-        <p>Migration to new APIs reducing costs and improving reliability for AEC clients.</p>
+      <div class="education-item">
+        <div class="job-title">Bachelor of Technology (B.Tech)</div>
+        <p>Electronics and Communication Engineering</p>
       </div>
     </div>
-  </section>
 
-  <footer>
-    <div class="footer-social">
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="mailto:sumitkaushik@outlook.com"><i class="fas fa-envelope"></i></a>
+    <!-- Skills -->
+    <div class="resume-section">
+      <h2 class="section-title"><i class="fas fa-cogs"></i> Core Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Product Management</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Product Strategy</span>
+            <span class="skill-tag">Roadmap Planning</span>
+            <span class="skill-tag">Market Research</span>
+            <span class="skill-tag">Competitive Analysis</span>
+            <span class="skill-tag">User Research</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Technical Skills</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">API Development</span>
+            <span class="skill-tag">SaaS Platforms</span>
+            <span class="skill-tag">AI/ML Integration</span>
+            <span class="skill-tag">Data Analytics</span>
+            <span class="skill-tag">Cloud Platforms</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Tools & Frameworks</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">Confluence</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Google Analytics</span>
+            <span class="skill-tag">Mixpanel</span>
+            <span class="skill-tag">Tableau</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Methodologies</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Agile/Scrum</span>
+            <span class="skill-tag">Design Thinking</span>
+            <span class="skill-tag">Lean Startup</span>
+            <span class="skill-tag">A/B Testing</span>
+            <span class="skill-tag">OKR & KPI-Driven Planning</span>
+             <span class="skill-tag">Stakeholder & Partner Management</span>
+             <span class="skill-tag">Data-Driven Decision Making</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <p>© 2025 Sumit Kaushik. All rights reserved.</p>
-  </footer>
+
+    <!-- Certifications   
+    <div class="resume-section">
+      <h2 class="section-title"><i class="fas fa-certificate "></i> Certifications</h2>
+      <div class="skill-tags">
+        <span class="skill-tag">Certified Scrum Product Owner (CSPO)</span>
+        <span class="skill-tag">Google Analytics Certified</span>
+        <span class="skill-tag">AWS Cloud Practitioner</span>
+        <span class="skill-tag">Product Management Certificate - Stanford</span>
+      </div>
+    </div>
+-->
+    <!-- Key Achievements -->
+    <div class="resume-section">
+      <h2 class="section-title"><i class="fas fa-trophy"></i> Key Achievements</h2>
+      <ul class="responsibilities">
+        <li>Increased product adoption rate by 45% through strategic feature development and user experience optimization</li>
+        <li>Built and launched 10+ strategic partner integrations, driving $50M+ in revenue and enabling real-time data sync across platforms like DocuSign, ServiceNow, and Splunk.</li>
+        <li>Led Egnyte Developer Portal revamp with an AI-powered backend, cutting integration setup time by 40%.</li>
+        <li>Built and scaled API ecosystem that now supports 350+ third-party integrations</li>
+        <li>Delivered AI-driven document workflows, improving operational efficiency by 30%.</li>
+        <li>Launched Omni-Channel Handover APIs powering bot-to-agent transfers on 30+ channels, generating $25M+ revenue.</li>
+        <li>Owned Sprinklr Developer Portals to enhance API discoverability and developer experience.</li>
+      </ul>
+    </div>
+
+    <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  </div>
 </body>
 
 </html>
