@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sumit Kaushik | Product Manager</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #222;
+      background-color: #f9f9ff;
+    }
+
+    /* ===== Header ===== */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #111;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+      padding: 15px 25px;
+      color: #fff;
+    }
+
+    .navbar .logo {
+      font-size: 22px;
+      font-weight: 600;
+      color: #00adb5;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .navbar li {
+      margin-left: 25px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #00adb5;
+    }
+
+    /* ===== Sections ===== */
+    section {
+      padding: 100px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .banner-area {
+      text-align: center;
+      padding-top: 130px;
+    }
+
+    .banner-area h1 {
+      font-size: 45px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 15px;
+    }
+
+    .banner-area p {
+      color: #555;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .primary-btn {
+      display: inline-block;
+      background: #00adb5;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 600;
+      margin: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .primary-btn:hover {
+      background: #007e85;
+    }
+
+    .square img {
+      max-width: 350px;
+      margin-top: 40px;
+      border-radius: 8px;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: #111;
+      color: #aaa;
+      padding: 60px 20px 30px;
+      text-align: center;
+    }
+
+    .footer-section {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .footer-col {
+      flex: 1;
+      min-width: 250px;
+      margin: 20px;
+    }
+
+    .footer-col h4 {
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .footer-col a {
+      color: #aaa;
+      text-decoration: none;
+      display: block;
+      margin: 5px 0;
+    }
+
+    .footer-col a:hover {
+      color: #00adb5;
+    }
+
+    .footer-social a {
+      margin: 0 10px;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    .footer-social a:hover {
+      color: #00adb5;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 15px;
+      font-size: 14px;
+      color: #888;
+      margin-top: 30px;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+      }
+
+      .navbar ul {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .navbar li {
+        margin: 10px 0;
+      }
+
+      .square img {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Sumit Kaushik</div>
+      <ul>
+        <li><a href="#profile" class="active">Profile</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Profile Section ===== -->
+  <section id="profile" class="banner-area">
+    <h1>Sumit Kaushik</h1>
+    <p>Product Management | SaaS & AI Platforms | API & Partner Ecosystem Strategist</p>
+    <div class="square">
+      <img src="img/Product Manager.png" alt="Sumit Kaushik">
+    </div>
+  </section>
+
+  <!-- ===== Download Section ===== -->
+  <section id="download">
+    <h2>Download My Resume</h2>
+    <a href="/docs/SUMIT KAUSHIIK (SPM).pdf" class="primary-btn" download>Download Resume</a>
+    <a href="/docs/SUMIT KAUSHIIK (SPM).pdf" class="primary-btn" target="_blank">View Resume</a>
+
+    <div style="margin-top:40px;">
+      <p><a href="docs/After10th.pdf" target="_blank">Career Path After 10th</a></p>
+      <p><a href="docs/UC-M9VR5MRA.pdf" target="_blank">Jenkins CI Certificate</a></p>
+      <p><a href="docs/UC-QB6N8WN6.jpg" target="_blank">MongoDB Certificate</a></p>
+      <p><a href="https://www.codechef.com/users/l58akg" target="_blank">CodeChef Profile</a></p>
+    </div>
+  </section>
+
+  <!-- ===== Projects Section ===== -->
+  <section id="projects">
+    <h2>Highlighted Projects</h2>
+    <p>Integrations, Product Launches, and AI-based innovations that shaped customer experiences.</p>
+    <ul style="margin-top:20px; line-height:1.8;">
+      <li>🔗 Egnyte x ServiceNow Integration — Incident sync and automation</li>
+      <li>🧩 DocuSign V2.1 API migration with chunked uploads</li>
+      <li>💡 Bluebeam Studio API modernization</li>
+      <li>⚙️ Google Workspace Add-ons for seamless co-editing</li>
+      <li>🛠️ Presto Self-Serve Portal — Admin & user onboarding automation</li>
+    </ul>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer id="contact">
+    <div class="footer-section">
+      <div class="footer-col">
+        <h4>Blogs</h4>
+        <a href="#">AI in Product Management</a>
+        <a href="#">Integrations That Drive Growth</a>
+        <a href="#">Designing for Data</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:SumeetKaushiik@gmail.com"><i class="fa fa-envelope"></i> SumeetKaushiik@gmail.com</a>
+        <a href="tel:+917974027750"><i class="fa fa-phone"></i> +91 797 402 7750</a>
+        <div class="footer-social" style="margin-top:10px;">
+          <a href="https://www.linkedin.com/in/sumit-kaushik-307273190/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <script>document.write(new Date().getFullYear())</script> Sumit Kaushik | Built with ❤️ for GitHub Pages
+    </div>
+  </footer>
+
+  <!-- ===== JS for Active Section Highlight ===== -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".navbar a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
