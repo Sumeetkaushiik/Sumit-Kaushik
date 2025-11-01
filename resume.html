@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume - Sumit Kaushik | Product Manager</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #222;
+      background-color: #f9f9ff;
+      line-height: 1.6;
+    }
+
+    /* ===== Header ===== */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #111;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+      padding: 15px 25px;
+      color: #fff;
+    }
+
+    .navbar .logo {
+      font-size: 22px;
+      font-weight: 600;
+      color: #00adb5;
+    }
+
+    .navbar ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    .navbar li {
+      list-style: none;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 400;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #00adb5;
+    }
+
+    /* ===== Main Content ===== */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 100px 25px 50px;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .page-header h1 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .page-header p {
+      font-size: 1.1rem;
+      color: #666;
+    }
+
+    .resume-section {
+      background: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #00adb5;
+      padding-bottom: 10px;
+    }
+
+    .experience-item, .education-item, .skill-category {
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .experience-item:last-child, .education-item:last-child, .skill-category:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .job-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .company {
+      font-size: 1.1rem;
+      color: #00adb5;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .duration {
+      color: #666;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .responsibilities {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .responsibilities li {
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .responsibilities li:before {
+      content: "▸";
+      color: #00adb5;
+      position: absolute;
+      left: 0;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-category h4 {
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      background: #00adb5;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #00adb5;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .back-link:hover {
+      background: #008a91;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      .navbar ul {
+        gap: 20px;
+      }
+
+      .container {
+        padding: 120px 20px 50px;
+      }
+
+      .page-header h1 {
+        font-size: 2rem;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Sumit Kaushik</div>
+      <ul>
+        <li><a href="index.html">Profile</a></li>
+        <li><a href="resume.html" class="active">Resume</a></li>
+        <li><a href="index.html#download">Download</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>Sumit Kaushik</h1>
+      <p>Senior Product Manager | SaaS & AI Platforms | API & Partner Ecosystem Strategist</p>
+    </div>
+
+    <!-- Professional Summary -->
+    <div class="resume-section">
+      <h2 class="section-title"><i class="fas fa-user"></i> Professional Summary</h2>
+      <p>Results-driven Senior Product Manager with 8+ years of experience in SaaS platforms, AI technologies, and API ecosystem development. Proven track record of leading cross-functional teams to deliver innovative products that drive revenue growth and enhance user experience. Expert in product strategy, market analysis, and stakeholder management with deep understanding of enterprise software solutions.</p>
+    </div>
+
+    <!-- Experience -->
+    <div class="resume-section">
+      <h2 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</h2>
+      
+      <div class="experience-item">
+        <div class="job-title">Senior Product Manager</div>
+        <div class="company">TechCorp Solutions</div>
+        <div class="duration">January 2021 - Present</div>
+        <ul class="responsibilities">
+          <li>Led product strategy and roadmap for SaaS platform serving 50,000+ enterprise users</li>
+          <li>Managed $2M product budget and delivered 15+ major feature releases</li>
+          <li>Collaborated with engineering, design, and sales teams to implement AI-powered automation features</li>
+          <li>Increased user engagement by 35% through data-driven product improvements</li>
+          <li>Established API partner ecosystem resulting in 25% revenue growth</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-title">Product Manager</div>
+        <div class="company">Innovation Labs Inc.</div>
+        <div class="duration">March 2019 - December 2020</div>
+        <ul class="responsibilities">
+          <li>Managed end-to-end product lifecycle for B2B software solutions</li>
+          <li>Conducted market research and competitive analysis for new product initiatives</li>
+          <li>Worked closely with UX/UI teams to optimize user experience and reduce churn by 20%</li>
+          <li>Implemented agile methodologies and improved development velocity by 40%</li>
+          <li>Successfully launched 3 major product features ahead of schedule</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-title">Associate Product Manager</div>
+        <div class="company">StartupXYZ</div>
+        <div class="duration">June 2017 - February 2019</div>
+        <ul class="responsibilities">
+          <li>Assisted in product strategy development for early-stage SaaS startup</li>
+          <li>Analyzed user feedback and market trends to identify product opportunities</li>
+          <li>Coordinated with development teams to prioritize feature development</li>
+          <li>Created detailed product specifications and user stories</li>
+          <li>Supported go-to-market strategies for new feature launches</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="resume-section">
+      <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+      
+      <div class="education-item">
+        <div class="job-title">Master of Business Administration (MBA)</div>
+        <div class="company">Indian Institute of Management (IIM)</div>
+        <div class="duration">2015 - 2017</div>
+        <p>Specialization in Product Management and Strategy</p>
+      </div>
+
+      <div class="education-item">
+        <div class="job-title">Bachelor of Technology (B.Tech)</div>
+        <div class="company">Indian Institute of Technology (IIT)</div>
+        <div class="duration">2011 - 2015</div>
+        <p>Computer Science and Engineering</p>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="resume-section">
+      <h2 class="section-title"><i class="fas fa-cogs"></i> Core Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Product Management</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Product Strategy</span>
+            <span class="skill-tag">Roadmap Planning</span>
+            <span class="skill-tag">Market Research</span>
+            <span class="skill-tag">Competitive Analysis</span>
+            <span class="skill-tag">User Research</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Technical Skills</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">API Development</span>
+            <span class="skill-tag">SaaS Platforms</span>
+            <span class="skill-tag">AI/ML Integration</span>
+            <span class="skill-tag">Data Analytics</span>
+            <span class="skill-tag">Cloud Platforms</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Tools & Frameworks</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">Confluence</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Google Analytics</span>
+            <span class="skill-tag">Mixpanel</span>
+            <span class="skill-tag">Tableau</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Methodologies</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Agile/Scrum</span>
+            <span class="skill-tag">Design Thinking</span>
+            <span class="skill-tag">Lean Startup</span>
+            <span class="skill-tag">A/B Testing</span>
+            <span class="skill-tag">OKRs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="resume-section">
+      <h2 class="section-title"><i class="fas fa-certificate"></i> Certifications</h2>
+      <div class="skill-tags">
+        <span class="skill-tag">Certified Scrum Product Owner (CSPO)</span>
+        <span class="skill-tag">Google Analytics Certified</span>
+        <span class="skill-tag">AWS Cloud Practitioner</span>
+        <span class="skill-tag">Product Management Certificate - Stanford</span>
+      </div>
+    </div>
+
+    <!-- Key Achievements -->
+    <div class="resume-section">
+      <h2 class="section-title"><i class="fas fa-trophy"></i> Key Achievements</h2>
+      <ul class="responsibilities">
+        <li>Increased product adoption rate by 45% through strategic feature development and user experience optimization</li>
+        <li>Successfully managed product portfolio worth $5M+ in annual recurring revenue</li>
+        <li>Led cross-functional team of 20+ members across engineering, design, and marketing</li>
+        <li>Implemented data-driven decision making processes that reduced product development time by 30%</li>
+        <li>Built and scaled API ecosystem that now supports 100+ third-party integrations</li>
+        <li>Recognized as "Product Manager of the Year" at TechCorp Solutions (2022)</li>
+      </ul>
+    </div>
+
+    <a href="index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> Back to Portfolio
+    </a>
+  </div>
+</body>
+
+</html>
