@@ -1,2 +1,2 @@
-# Sumit Kaushik
-# [Sumitkaushik.github.io](http://sumit.github.io)
+# Sumit-Kaushik
+# [Sumit-kaushik.github.io](http://Sumit-Kaushik.github.io)
