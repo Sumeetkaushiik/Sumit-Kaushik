@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
+    /* ===== Global Reset ===== */
     * {
       margin: 0;
       padding: 0;
@@ -19,9 +20,9 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      color: #222;
-      background-color: #f9f9ff;
-      line-height: 1.6;
+      color: #333;
+      background-color: #f9fafc;
+      line-height: 1.7;
     }
 
     /* ===== Header ===== */
@@ -29,9 +30,10 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: #111;
+      background: linear-gradient(90deg, #ffffff, #f4f6f9);
+      border-bottom: 1px solid #e0e0e0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
 
     .navbar {
@@ -40,126 +42,134 @@
       align-items: center;
       max-width: 1100px;
       margin: auto;
-      padding: 15px 25px;
-      color: #fff;
+      padding: 18px 25px;
     }
 
     .navbar .logo {
       font-size: 22px;
       font-weight: 600;
-      color: #00adb5;
+      color: #004aad;
+      letter-spacing: 0.5px;
     }
 
     .navbar ul {
       display: flex;
       list-style: none;
-      gap: 30px;
-    }
-
-    .navbar li {
-      list-style: none;
+      gap: 28px;
     }
 
     .navbar a {
-      color: #fff;
+      color: #555;
       text-decoration: none;
-      font-weight: 400;
-      transition: 0.3s;
+      font-weight: 500;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
     }
 
     .navbar a:hover,
     .navbar a.active {
-      color: #00adb5;
+      color: #004aad;
+      border-bottom: 2px solid #004aad;
     }
 
-    /* ===== Main Content ===== */
+    /* ===== Main Container ===== */
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 100px 25px 50px;
+      padding: 120px 25px 60px;
     }
 
     .page-header {
       text-align: center;
       margin-bottom: 50px;
+      animation: fadeIn 1s ease-in-out;
     }
 
     .page-header h1 {
       font-size: 2.5rem;
-      color: #333;
+      color: #004aad;
       margin-bottom: 10px;
     }
 
     .page-header p {
       font-size: 1.1rem;
-      color: #666;
+      color: #555;
     }
 
+    /* ===== Resume Sections ===== */
     .resume-section {
-      background: #fff;
+      background: #ffffff;
       border-radius: 10px;
       padding: 30px;
-      margin-bottom: 30px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 35px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e8edf3;
+      transition: all 0.3s ease;
+    }
+
+    .resume-section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     }
 
     .section-title {
-      font-size: 1.8rem;
-      color: #333;
+      font-size: 1.6rem;
+      color: #004aad;
       margin-bottom: 20px;
-      border-bottom: 3px solid #00adb5;
+      border-bottom: 2px solid rgba(0, 74, 173, 0.2);
       padding-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .experience-item, .education-item, .skill-category {
-      margin-bottom: 25px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #eee;
-    }
-
-    .experience-item:last-child, .education-item:last-child, .skill-category:last-child {
-      border-bottom: none;
-      margin-bottom: 0;
+    .section-title i {
+      color: #004aad;
     }
 
     .job-title {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 600;
-      color: #333;
+      color: #222;
       margin-bottom: 5px;
     }
 
     .company {
-      font-size: 1.1rem;
-      color: #00adb5;
+      font-size: 1rem;
+      color: #004aad;
       font-weight: 500;
       margin-bottom: 5px;
     }
 
     .duration {
-      color: #666;
+      color: #777;
       font-style: italic;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .responsibilities {
       list-style: none;
       padding-left: 0;
+      color: #444;
     }
 
     .responsibilities li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       padding-left: 20px;
       position: relative;
     }
 
-    .responsibilities li:before {
-      content: "▸";
-      color: #00adb5;
+    .responsibilities li::before {
+      content: "•";
+      color: #004aad;
       position: absolute;
       left: 0;
+      font-size: 1.1rem;
+      line-height: 1;
     }
 
+    /* ===== Skills Grid ===== */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -167,38 +177,64 @@
     }
 
     .skill-category h4 {
-      font-size: 1.2rem;
-      color: #333;
+      font-size: 1.1rem;
+      color: #222;
       margin-bottom: 10px;
+      font-weight: 600;
     }
 
     .skill-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 10px;
     }
 
     .skill-tag {
-      background: #00adb5;
-      color: white;
-      padding: 5px 12px;
+      background: #f1f5fa;
+      color: #004aad;
+      border: 1px solid #d6e0f0;
+      padding: 6px 14px;
       border-radius: 20px;
       font-size: 0.9rem;
+      transition: all 0.3s ease;
     }
 
+    .skill-tag:hover {
+      background: #004aad;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(0, 74, 173, 0.4);
+    }
+
+    /* ===== Back Button ===== */
     .back-link {
       display: inline-block;
       margin-top: 30px;
       padding: 10px 20px;
-      background: #00adb5;
-      color: white;
-      text-decoration: none;
+      background: transparent;
+      color: #004aad;
+      border: 1px solid #004aad;
       border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
       transition: 0.3s;
     }
 
     .back-link:hover {
-      background: #008a91;
+      background: #004aad;
+      color: #fff;
+      box-shadow: 0 0 15px rgba(0, 74, 173, 0.3);
+    }
+
+    /* ===== Animations ===== */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* ===== Responsive ===== */
@@ -219,10 +255,6 @@
 
       .page-header h1 {
         font-size: 2rem;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -408,9 +440,7 @@
       </ul>
     </div>
 
-    <a href="index.html" class="back-link">
-      <i class="fas fa-arrow-left"></i> Back to Portfolio
-    </a>
+    <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
   </div>
 </body>
 
